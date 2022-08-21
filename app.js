@@ -78,6 +78,38 @@ confirm(`confirma la compra de ${cantidadFinal} productos con un total de $${tot
 
 
 
+let lista1 = document.getElementById("listaProductos")
+
+for (const dato of productos_) {
+    //crear el nodo li para imprimir el array e imprimirlo en el UL padre en cada iteracion
+    let li = document.createElement("li")
+    li.innerHTML = dato
+    lista1.appendChild(li)
+}
+
+let lista2 = document.getElementById("listaCantidad")
+
+for (const dato of canti) {
+    //crear el nodo li para imprimir el array e imprimirlo en el UL padre en cada iteracion
+    let li = document.createElement("li")
+    li.innerHTML = dato
+    lista2.appendChild(li)
+}
+
+let lista3 = document.getElementById("listaPrecio")
+
+for (const dato of precio) {
+    //crear el nodo li para imprimir el array e imprimirlo en el UL padre en cada iteracion
+    let li = document.createElement("li")
+    li.innerHTML = dato
+    lista3.appendChild(li)
+}
+
+
+let total1 = document.getElementById("totales")
+
+total1.innerHTML = `<p> Total : $ ${totalSuma}</p>`
+
 
 //confirm(`confirma la compra de ${cantidadFinal} productos con un total de $${totalSuma} para proceder`) 
 
@@ -116,4 +148,5 @@ console.log(otroObjeto1.total())
 
 
 
-// confirm("confirma la compra para proceder")
+// confirm("confirma la compra para proceder") 
+
