@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <!--
     <div class="contenedor">
         <div class="divLista">
             <ul id="listaCantidad"></ul>
@@ -19,7 +20,24 @@
         <hr class="linea">
         <p id="totales">TOTAL</p>
     </div>
-    
+-->
+
+    <select name="productos" id="productoTodos">
+        <option value="Leche">Leche</option>
+        <option value="Cafe">Cafe</option>
+        <option value="Azucar">Azucar</option>
+        <option value="Gaseosa">Gaseosa</option>
+        <option value="Soda">Soda</option>
+        <option value="Manteca">Manteca</option>
+    </select>
+
+    <p id="resultado"> </p>
+    <form action="" id="form">
+        <input type="number" id="cantidad">
+        <input type="submit" id="total" value="agregar">
+    </form>
+
+    <p id="totales"></p>
     <script src="app.js"></script>
 </body>
 

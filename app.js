@@ -1,3 +1,5 @@
+/*
+
 alert("Escriba los productos que desee comprar de la siguiente lista: \n 1. Leche \n 2. Cafe \n 3. Azucar  \n 4. Gaseosa  \n 5. Soda \n 6. Manteca  ")
 
 
@@ -78,7 +80,11 @@ confirm(`confirma la compra de ${cantidadFinal} productos con un total de $${tot
 
 
 
-let lista1 = document.getElementById("listaProductos")
+
+
+let lista1 = document.getElementById("listaProductos") // selecciono el nodo padre
+
+
 
 for (const dato of productos_) {
     //crear el nodo li para imprimir el array e imprimirlo en el UL padre en cada iteracion
@@ -99,7 +105,7 @@ for (const dato of canti) {
 let lista3 = document.getElementById("listaPrecio")
 
 for (const dato of precio) {
-    //crear el nodo li para imprimir el array e imprimirlo en el UL padre en cada iteracion
+    
     let li = document.createElement("li")
     li.innerHTML = dato
     lista3.appendChild(li)
@@ -150,3 +156,73 @@ console.log(otroObjeto1.total())
 
 // confirm("confirma la compra para proceder") 
 
+
+
+class OtroObjeto  {
+    constructor(nombre, cantidad) {
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+    }
+}
+
+
+const listaProductos = [];
+
+let productosLista = document.getElementById("productoTodos");
+
+function seleccionarProducto() {
+
+    let datos = document.getElementById("productoTodos").value
+
+    document.getElementById("resultado").innerHTML = `Usted selecciono el producto ${datos}, proceda a seleccionar la cantidad`
+
+}
+
+productosLista.onchange = seleccionarProducto
+
+
+
+/*
+let formulario = document.getElementById("form");
+
+formulario.addEventListener("submit", datosForm)
+
+
+function datosForm(e) {
+    e.preventDefault();
+
+    let data = e.target
+    // obtenemos los datos ingresados en el evento
+    console.log(data.children[0].value)
+
+}
+*/
+
+
+let total = document.getElementById("total")
+let totales = document.getElementById("totales");
+
+total.addEventListener("click", () => {
+
+    let datos = document.getElementById("productoTodos").value
+
+    let formulario = document.getElementById("form");
+
+    formulario.addEventListener("submit", datosForm)
+
+
+    function datosForm(e) {
+        e.preventDefault();
+
+        var data = e.target
+      
+        totales.innerHTML = `<p>Agregaste ${datos} y la cantidad es ${data.children[0].value}</p>`
+
+        listaProductos.push(new OtroObjeto(datos,data.children[0].value,))
+
+        console.log(listaProductos)
+
+    }
+
+
+})
